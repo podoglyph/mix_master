@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-before_action :set_artist, only: [:show, :edit]
+before_action :set_artist, only: [:show, :edit, :destroy]
   def index
     @artists = Artist.all
   end
@@ -29,6 +29,12 @@ before_action :set_artist, only: [:show, :edit]
     @artist = Artist.update(artist_params)
 
     redirect_to artist_path(@artist)
+  end
+
+  def destroy
+    @artist.destroy
+
+    redirect_to artists_path
   end
 
 private
