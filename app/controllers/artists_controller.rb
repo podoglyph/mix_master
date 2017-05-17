@@ -13,11 +13,11 @@ before_action :set_artist, only: [:show]
   end
 
   def create
-    @artist = Artist.new(artist_params)
+    @artist = Artist.create(artist_params)
     if @artist.save
       redirect_to artist_path(@artist)
     else
-      render :new
+      redirect_to new_artist_path
     end
   end
 
