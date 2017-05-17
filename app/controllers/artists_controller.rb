@@ -17,7 +17,7 @@ before_action :set_artist, only: [:show]
     if @artist.save
       redirect_to artist_path(@artist)
     else
-      redirect_to new_artist_path
+      render :new
     end
   end
 
