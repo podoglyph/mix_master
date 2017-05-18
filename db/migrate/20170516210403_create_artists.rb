@@ -1,9 +1,9 @@
 class CreateArtists < ActiveRecord::Migration[5.1]
   def change
     create_table :artists do |t|
-      t.string :artist_name
-      t.string :artist_image_path
-      
+      t.string :name, null: false
+      t.string :image_path, null: false
+
       t.timestamps
     end
   end
